@@ -99,7 +99,8 @@ object ScalaIoBuild extends Build {
 
   val fileSettings: Seq[Setting[_]] = Seq(
     name := "scala-io-file",
-    pomPostProcess := removeScalaIOTestDependency.apply
+    pomPostProcess := removeScalaIOTestDependency.apply,
+    libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.0-RC5"
   )
   lazy val fileProject = Project("file", file("file")).
     configs(Samples).
