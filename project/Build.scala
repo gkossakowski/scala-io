@@ -57,6 +57,7 @@ object ScalaIoBuild extends Build {
     offline := false,
 //    parallelExecution in Test := false,
     scalaVersion := BuildConstants.scalaVersion,
+    sources in (Compile,doc) := Seq.empty,
 
     publishMavenStyle := true,
     publishToSettings,
